@@ -1,33 +1,152 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const WORD_LIMIT = 300;
+
+function countWords(text) {
+  const trimmedText = text.trim();
+  return trimmedText ? trimmedText.split(/\s+/).length : 0;
+}
+
+function trimToWordLimit(text) {
+  const words = text.trim().split(/\s+/);
+  if (text.trim() === '' || words.length <= WORD_LIMIT) {
+    return text;
+  }
+  return words.slice(0, WORD_LIMIT).join(' ');
+}
+
+function TextPanel({ title, optional = false, value, onChange }) {
+  const wordCount = countWords(value);
+
+  function handleChange(event) {
+    onChange(trimToWordLimit(event.target.value));
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <section className="text-panel">
+      <div className="text-panel-header">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+          <h2>{title}</h2>
+          {optional && <p className="optional-label">Optional</p>}
         </div>
+        <span className={wordCount == WORD_LIMIT ? 'word-count limit-reached' : 'word-count'}>
+          {wordCount}/{WORD_LIMIT} words
+        </span>
+      </div>
+
+      <textarea
+        value={value}
+        onChange={handleChange}
+        placeholder={`Paste your ${title.toLowerCase()} here...`}
+        aria-label={title}
+      />
+    </section>
+  );
+}
+
+function App() {
+  const [sourceText, setSourceText] = useState('');
+  const [targetText, setTargetText] = useState('');
+  const [machineTranslation, setMachineTranslation] = useState('');
+  const [status, setStatus] = useState('');
+
+  function analyseSource() {
+    // replace with fetch call
+    setStatus('Source analysis will identify proposed units of creative potential.');     
+  }
+
+  function analyseTechniques() {
+    // replace with fetch call
+    setStatus('Technique analysis will compare the source with the target text(s).');
+  }
+
+  return (
+    <main className="app">
+      <header className="hero">
+        <p className="eyebrow">Literary translation annotation assistant</p>
+        <h1>Equivalens</h1>
+        <p className="intro">
+          Paste aligned source and translation texts to prepare an annotation.
+        </p>
+      </header>
+
+      <section className="text-grid" aria-label="Text inputs">
+        <TextPanel
+          title="Source text"
+          value={sourceText}
+          onChange={setSourceText}
+        />
+
+        <TextPanel
+          title="Target text"
+          value={targetText}
+          onChange={setTargetText}
+        />
+
+        <TextPanel
+          title="Machine translation"
+          optional
+          value={machineTranslation}
+          onChange={setMachineTranslation}
+        />
+      </section>
+
+      <section className="actions" aria-label="Analysis actions">
+        <button
+          type="button"
+          onClick={analyseSource}
+          disabled={!sourceText.trim()}
+        >
+          Analyse creative potential
+        </button>
+
+        <button
+          type="button"
+          className="secondary-button"
+          onClick={analyseTechniques}
+          disabled={!sourceText.trim() || !targetText.trim()}
+        >
+          Analyse translation techniques
+        </button>
+      </section>
+
+      {status && (
+        <section className="status-message" aria-live="polite">
+          {status}
+        </section>
+      )}
+    </main>
+  );
+}
+
+export default App;
+
+/*     <>
+      <section id="center">
+        <div>
+          <h1>Equivalens</h1>
+        </div>
+        <ul>
         <button
           type="button"
           className="counter"
-          onClick={() => setCount((count) => count + 1)}
         >
-          Count is {count}
+          Upload Source File
         </button>
+        <button
+          type="button"
+          className="counter"
+        >
+          Upload Target File
+        </button>
+        <button
+          type="button"
+          className="counter"
+        >
+          Upload MT File
+        </button>
+        </ul>
       </section>
 
       <div className="ticks"></div>
@@ -37,82 +156,24 @@ function App() {
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
           </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <h2>Source text</h2>
+          <p>Here is your source text</p>
         </div>
         <div id="social">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>
           </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <h2>Target Text</h2>
+          <p>Here is your target text</p>
+        </div>
+        <div id="docs">
+          <svg className="icon" role="presentation" aria-hidden="true">
+            <use href="/icons.svg#documentation-icon"></use>
+          </svg>
+          <h2>MT text</h2>
+          <p>Optional</p>
         </div>
       </section>
-
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
@@ -120,3 +181,4 @@ function App() {
 }
 
 export default App
+ */

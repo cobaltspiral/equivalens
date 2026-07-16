@@ -1,5 +1,148 @@
-.counter {
+.app {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  padding: 48px 28px 72px;
+  box-sizing: border-box;
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.eyebrow,
+.optional-label {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.text-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.text-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--social-bg);
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.optional-label {
+  margin-top: -4px;
+  font-size: 0.72rem;
+}
+
+.word-count {
+  flex-shrink: 0;
+  color: var(--text);
+  font-size: 0.8rem;
+}
+
+.limit-reached {
+  color: #b42318;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  min-height: 280px;
+  flex: 1;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  background: var(--bg);
+  font: inherit;
+  line-height: 1.5;
+}
+
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.actions button {
+  padding: 12px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: white;
+  background: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.actions .secondary-button {
+  color: var(--accent);
+  background: transparent;
+}
+
+.actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.status-message {
+  max-width: 780px;
+  margin: 28px auto 0;
+  padding: 16px;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-bg);
+  text-align: left;
+}
+
+@media (max-width: 980px) {
+  .text-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text-panel {
+    min-height: 300px;
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+}
+
+
+
+
+/* .counter {
   font-size: 16px;
+  margin-right: 20px;
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--accent);
@@ -7,6 +150,7 @@
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin-bottom: 24px;
+  text-align: center;
 
   &:hover {
     border-color: var(--accent-border);
@@ -182,3 +326,4 @@
     border-right-color: var(--border);
   }
 }
+ */
