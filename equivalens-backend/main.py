@@ -1,6 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+api_key = os.getenv("MISTRAL_API_KEY")
 
 app = FastAPI()
 
