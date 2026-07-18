@@ -1,55 +1,28 @@
 # taxonomy.py
 
 UCP_CATEGORIES = {
-    "multiword_unit": {
-        "label": "Multiword unit",
-        "subcategories": [
-            "compound",
-            "fixed_expression",
-            "idiomatic_expression",
-            "light_verb_construction",
-            "verb_particle_construction",
-        ],
-        "definition": (
-            "A multiword expression that may not have a straightforward "
-            "or routine equivalent in the target language."
-        ),
-    },
-    "complex_structure": {
-        "label": "Complex structure",
-        "subcategories": [
-            "complex_noun_phrase",
-            "complex_syntactic_structure",
-        ],
-        "definition": (
-            "A complex phrase or syntactic construction that may require "
-            "a non-routine translation solution."
-        ),
-    },
-    "cultural_linguistic_variant": {
-        "label": "Cultural and linguistic variant",
-        "subcategories": [
-            "cultural_reference",
-            "linguistic_variant",
-        ],
-        "definition": (
-            "A culturally specific element or linguistic variation that may "
-            "not be directly reproducible in the target language."
-        ),
-    },
-    "colloquial_language": {
-        "label": "Colloquial language",
-        "subcategories": [],
-        "definition": "Informal, conversational, dialectal, or slang language.",
-    },
-    "metaphor_original_image": {
-        "label": "Metaphor and original image",
-        "subcategories": [],
-        "definition": (
-            "A metaphorical expression or original image whose effect may "
-            "need a creative translation solution."
-        ),
-    },
+    "multiword expression": "multiword expression, i.e., fully lexicalized fixed expressions, e.g. by and large, in short",
+    "multiword_unit_idiomatic_expression": "multiword unit: idiomatic expression (e.g., kick the bucket, let the cat out of the bag)",
+    "mwe_compound_nominal": "multiword expression: compound nominal (e.g, car park)",
+    "mwe_proper_name": "multiword expression: proper name",
+    "mwe_light_verb_construction": "multiword expression: light-verb construction (e.g., make a mistake, give a demo)",
+    "mwe_verb_particle_construction": "multiword expression: verb-particle construction (e.g., write up, look up)",
+    "mwe_institutionalised_phrase": "multiword expression: institutionalised/conventionalised phrase (e.g., salt and pepper) ",
+    "complex_noun_phrase": "complex noun phrase",
+    "complex_syntactic_structure": "complex syntactic structure",
+    "metaphor_and_original_image": "metaphor and/or original image; a figure of speech that implicitly compares two unrelated things, typically by stating that one thing is another.",
+    "comparison": "comparison",
+    "wordplay_and_puns": "wordplay and puns",
+    "onomatopoeias": "onomatopoeias",
+    "colloquial_language": "colloquial language (e.g., cursing, slang, colloquial constructions)",
+    "cultural_and_historical_reference": "cultural and historical reference",
+    "neologism": "neologism",
+    "gender_issue": "gender issue (e.g., president vs secratary in languages with gender cases)",
+    "linguistic_variant": "linguistic variant (e.g., American English or UK English)",
+    "unusual_punctuation": "unusual punctuation",
+    "rhyme_and_metrics": "rhyme and metrics",
+    "treatment": "treatment (e.g., formal, informal)",
+    "other": "other",
 }
 
 TRANSLATION_TECHNIQUES = {
@@ -61,6 +34,7 @@ TRANSLATION_TECHNIQUES = {
     "transposition": "Translating words or expressions by using other grammatical categories (e.g., noun -> verb) than the ones used in the source language, without altering the meaning of the utterance.",
     "modulation_plus_transposition": "Any sub-type of Modulation combined with transposition",
     "metaphor": "Keep the same metaphorical image by using a non-literal translation OR introduce metaphorical expression to translate non-metaphor",
+    "idiom": "Translate non-fixed expression by an idiom.",
     "reduction": "Remove deliberately certain content words in translation",
     "explicitation": "Introduce clarifications that remain implicit in the source language.",
     "no_type_attributed": "Translated words which don't correspond to any source words",
