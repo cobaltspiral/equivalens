@@ -136,3 +136,37 @@ textarea:focus {
     min-height: 200px;
   }
 }
+
+.results-section {
+  max-width: 960px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.annotation-card {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--social-bg);
+}
+
+.annotation-card p {
+  margin: 8px 0 0;
+}
+
+.annotation-card small {
+  display: block;
+  margin-top: 12px;
+  color: var(--text);
+}
+
+.error-message {
+  max-width: 780px;
+  margin: 24px auto 0;
+  padding: 14px;
+  border-left: 4px solid #b42318;
+  color: #b42318;
+  background: #fef3f2;
+  text-align: left;
+}
