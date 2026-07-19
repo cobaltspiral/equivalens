@@ -29,7 +29,6 @@ function TextPanel({ title, optional = false, value, onChange }) {
       <div className="text-panel-header">
         <div>
           <h2>{title}</h2>
-          {optional && <p className="optional-label">Optional</p>}
         </div>
         <span className={wordCount == WORD_LIMIT ? 'word-count limit-reached' : 'word-count'}>
           {wordCount}/{WORD_LIMIT} words
@@ -118,7 +117,7 @@ async function analyseTechniques() {
 
   return (
     <main className="app">
-      <header className="hero">
+      <header>
         <h1>Equivalens 🔍</h1>
         <p className="intro">
         Paste source text and target text in the boxes below to start analysing units of creative potential and translation techniques.
@@ -140,7 +139,6 @@ async function analyseTechniques() {
 
         <TextPanel
           title="Machine translation"
-          optional
           value={machineTranslation}
           onChange={setMachineTranslation}
         />
