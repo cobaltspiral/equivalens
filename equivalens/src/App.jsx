@@ -119,10 +119,9 @@ async function analyseTechniques() {
   return (
     <main className="app">
       <header className="hero">
-        <p className="eyebrow">Literary translation annotation assistant</p>
-        <h1>Equivalens</h1>
+        <h1>Equivalens 🔍</h1>
         <p className="intro">
-          Paste aligned source and translation texts to prepare an annotation.
+        Paste source text and target text in the boxes below to start analysing units of creative potential and translation techniques.
         </p>
       </header>
 
