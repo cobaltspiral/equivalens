@@ -180,7 +180,7 @@ to translate the units of creative potential previously found in the source text
         response = client.chat.parse(
             model="mistral-small-latest",
             temperature=0,
-            max_tokens=2000,
+            max_tokens=6000,
             response_format=TechniqueAnalysisResponse,
             messages=[
                 {"role": "system", "content": system_prompt},
