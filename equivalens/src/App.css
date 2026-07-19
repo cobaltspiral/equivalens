@@ -170,3 +170,13 @@ textarea:focus {
   background: #fef3f2;
   text-align: left;
 }
+
+.annotation-card h3 {
+  margin: 18px 0 4px;
+  font-size: 1rem;
+  color: var(--text-h);
+}
+
+.annotation-card h3:first-of-type {
+  margin-top: 14px;
+}

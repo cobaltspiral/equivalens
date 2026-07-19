@@ -46,13 +46,16 @@ class SourceAnalysisResponse(BaseModel):
     annotations: list[CreativePotentialAnnotation]
     limitations: list[str]
 
-class TechniqueAnnotation(BaseModel):
-    source_unit: str
-    target_unit: str | None = None
-    machine_translation_unit: str | None = None
+class TranslationTechniqueResult(BaseModel):
+    translated_unit: str | None = None
     techniques: list[str]
     confidence: Literal["high", "medium", "low"]
     rationale: str
+
+class TechniqueAnnotation(BaseModel):
+    source_unit: str
+    target_analysis: TranslationTechniqueResult
+    machine_translation_analysis: TranslationTechniqueResult | None = None
 
 class TechniqueAnalysisResponse(BaseModel):
     annotations: list[TechniqueAnnotation]
@@ -141,11 +144,13 @@ to translate the units of creative potential previously found in the source text
 - Analyse only the supplied units of creative potential. For each supplied source unit:
 - Find its translation in the target text.
 - If available, find its translation in the machine translation.
-- Assign one translation technique label from the allowed taxonomy.
+- Assign only one translation technique label from the allowed taxonomy.
 - Do not identify new source units.
 - Do not use several classifications for the same source_unit, choose the classification that better suits the unit.
 - Use `uncertain` if no confident technique can be proposed.
 - These are proposals for human review, not definitive annotations.
+- If a machine translation is supplied, separately analyse how that same
+  source unit was translated in the machine translation.
 
 """
 

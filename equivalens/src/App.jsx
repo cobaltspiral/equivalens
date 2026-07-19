@@ -205,10 +205,35 @@ async function analyseTechniques() {
     {techniqueAnnotations.map((annotation, index) => (
       <article className="annotation-card" key={`${annotation.source_unit}-${index}`}>
         <strong>{annotation.source_unit}</strong>
-        <p>Target: {annotation.target_unit || "No aligned unit found"}</p>
-        <p>Technique: {annotation.techniques.join(", ")}</p>
-        <p>{annotation.rationale}</p>
-        <small>Confidence: {annotation.confidence}</small>
+        <h3>Human target translation</h3>
+        <p>
+          Target unit:{" "}
+          {annotation.target_analysis.translated_unit || "No aligned unit found"}
+        </p>
+        <p>
+          Technique: {annotation.target_analysis.techniques.join(", ")}
+        </p>
+        <p>{annotation.target_analysis.rationale}</p>
+        <small>Confidence: {annotation.target_analysis.confidence}</small>
+
+        {annotation.machine_translation_analysis && (
+          <>
+            <h3>Machine translation</h3>
+            <p>
+              MT unit:{" "}
+              {annotation.machine_translation_analysis.translated_unit ||
+                "No aligned unit found"}
+            </p>
+            <p>
+              Technique:{" "}
+              {annotation.machine_translation_analysis.techniques.join(", ")}
+            </p>
+            <p>{annotation.machine_translation_analysis.rationale}</p>
+            <small>
+              Confidence: {annotation.machine_translation_analysis.confidence}
+            </small>
+          </>
+        )}
       </article>
     ))}
   </section>
