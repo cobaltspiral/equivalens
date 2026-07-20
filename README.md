@@ -2,6 +2,14 @@
 
 A human-in-the-loop annotation assistant for exploring creative choices in literary translation.
 
+<p align="center">
+  <img
+  src="./demo.gif"
+  alt="equivalens-demo-gif"
+  width=600
+  />
+</p>
+
 Equivalens is available at: https://equivalens.onrender.com
 
 ## The problem
