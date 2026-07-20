@@ -36,12 +36,6 @@ app.add_middleware(
 class SourceAnalysisRequest(BaseModel):
     source_text: str = Field(min_length=1, max_length=12000)
 
-class TechniqueAnalysisRequest(BaseModel):
-    source_text: str
-    target_text: str
-    machine_translation: str | None = None
-    creative_potential_units: list[CreativePotentialAnnotation]
-
 class CreativePotentialAnnotation(BaseModel):
     source_unit: str
     source_start: int = Field(ge=0)
@@ -53,6 +47,12 @@ class CreativePotentialAnnotation(BaseModel):
 class SourceAnalysisResponse(BaseModel):
     annotations: list[CreativePotentialAnnotation]
     limitations: list[str]
+
+class TechniqueAnalysisRequest(BaseModel):
+    source_text: str
+    target_text: str
+    machine_translation: str | None = None
+    creative_potential_units: list[CreativePotentialAnnotation]
 
 class TranslationTechniqueResult(BaseModel):
     translated_unit: str | None = None
