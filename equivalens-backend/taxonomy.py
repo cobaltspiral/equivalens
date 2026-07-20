@@ -1,7 +1,7 @@
 # taxonomy.py
 
 UCP_CATEGORIES = {
-    "multiword expression": "multiword expression, i.e., fully lexicalized fixed expressions, e.g. by and large, in short",
+    "multiword_expression": "multiword expression, i.e., fully lexicalized fixed expressions, e.g. by and large, in short",
     "multiword_unit_idiomatic_expression": "multiword unit: idiomatic expression (e.g., kick the bucket, let the cat out of the bag)",
     "mwe_compound_nominal": "multiword expression: compound nominal (e.g, car park)",
     "mwe_proper_name": "multiword expression: proper name",
