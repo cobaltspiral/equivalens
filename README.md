@@ -2,6 +2,8 @@
 
 A human-in-the-loop annotation assistant for exploring creative choices in literary translation.
 
+Equivalens is available at: https://equivalens.onrender.com
+
 ## The problem
 
 Literary-translation students and researchers often compare and annotate a source text with one or more translations manually. Identifying units that may require creative problem-solving, then recording the translation technique used for each one, is time-consuming and difficult to reproduce consistently.
