@@ -33,7 +33,7 @@ The interface currently accepts up to 300 words per text panel.
 
 The annotation workflow and taxonomy is based on:
 
-> Macken, L., Ruffo, P., & Daems, J. (2025). *The Role of Translation Workflows in Overcoming Translation Difficulties: A Comparative Analysis of Human and Machine Translation (Post-Editing) Approaches.*
+> Macken, L., Ruffo, P., & Daems, J. (2025). *The Role of Translation Workflows in Overcoming Translation Difficulties: A Comparative Analysis of Human and Machine Translation (Post-Editing) Approaches.*, in _Proceeding of the Second Workshop on Creative-text Translation and Technology (CTT)_, pages 1-13, Geneva, Switzerland, 24 June 2025. Availabe at: https://aclanthology.org/2025.ctt-1.1.pdf
 
 The prototype uses:
 
@@ -137,6 +137,13 @@ equivalens/
 | `POST /analyse-source` | Identifies proposed units of creative potential in the source text |
 | `POST /analyse-techniques` | Analyses how the selected source units were translated in the target and optional MT text |
 
+## Demo
+You can use [demo-source-text.txt](demo-source-text.txt), [demo-target-text.txt](demo-target-text.txt) and [demo-machine-translation.txt](demo-machine-translation.txt) to demo the tool.
+
+The demo source text is the incipit of Katherine Mansfield's short story _Feuille d'Album_ from the collection titled _Bliss_ (1918). This is freely available on [Project Gutenberg](https://www.gutenberg.org/cache/epub/44385/pg44385-images.html#chap10).
+
+The translation in the Italian target text is mine, while the machine tranlsation was generated using [DeepL](https://www.deepl.com/en/translator) on 19 July 2026.
+
 ## Limitations
 - The app proposes annotations; it does not provide ground-truth labels.
 - Results can vary between model calls and should be reviewed by a human.
@@ -158,12 +165,3 @@ The project is released under the MIT License.
 
 ## Author
 Created by Paola Ruffo (cobaltspiral) for **OpenAI Build Week 2026 (Education track)**
-
-## References
-
-
-
-
-
-
-
