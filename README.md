@@ -143,8 +143,8 @@ equivalens/
 - Evaluation against a human-annotated dataset
 - User accounts and persistent annotation projects
 
-## Licence
-The project is released under the MIT Licence.
+## License
+The project is released under the MIT License.
 
 ## Author
 Created by Paola Ruffo (cobaltspiral) for **OpenAI Build Week 2026 (Education track)**
