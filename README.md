@@ -76,7 +76,7 @@ Mistral Small is used for the app’s runtime annotation requests. It is a third
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/cobaltspiral/equivalens
 cd equivalens
 ```
 
