@@ -1,6 +1,6 @@
 # Equivalens
 
-A human-in-the-loop annotation assistant for exploring creative choices in literary translation.
+A human-in-the-loop annotation assistant for exploring creative choices in literary translation created for **OpenAI Build Week 2026 (Education track)**.
 
 <p align="center">
   <img
