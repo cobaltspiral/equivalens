@@ -142,7 +142,7 @@ You can use [demo-source-text.txt](demo-source-text.txt), [demo-target-text.txt]
 
 The demo source text is the incipit of Katherine Mansfield's short story _Feuille d'Album_ from the collection titled _Bliss_ (1918). This is freely available on [Project Gutenberg](https://www.gutenberg.org/cache/epub/44385/pg44385-images.html#chap10).
 
-The translation in the Italian target text is mine, while the machine tranlsation was generated using [DeepL](https://www.deepl.com/en/translator) on 19 July 2026.
+The Italian target text translation is mine, while the machine translation was generated using [DeepL](https://www.deepl.com/en/translator) on 19 July 2026.
 
 ## Limitations
 - The app proposes annotations; it does not provide ground-truth labels.
