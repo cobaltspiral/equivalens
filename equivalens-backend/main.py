@@ -130,6 +130,16 @@ improved translation.
         )
 
     except Exception as error:
+        error_text = str(error)
+
+        if "Status 429" in error_text:
+            raise HTTPException(
+                status_code=429,
+                detail=(
+                    "The analysis service is temporarily rate-limited. "
+                    "Please wait a minute and try again."
+                ),
+            )
         raise HTTPException(
             status_code=502,
             detail=f"Mistral source analysis failed: {str(error)}",
